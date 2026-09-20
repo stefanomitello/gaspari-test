@@ -1,0 +1,6 @@
+{
+  "explorer.fileNesting.patterns": {
+    "*.vue": "${capture}.props.ts"
+  },
+  "explorer.fileNesting.enabled": true,
+}

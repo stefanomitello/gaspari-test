@@ -1,0 +1,55 @@
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+@import "tailwindcss/utilities.css" layer(utilities) prefix(tw);
+
+@source "../../pages";
+@source "../../components";
+@source "../../layouts";
+
+@theme {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-background: var(--background, #ffffff);
+  --color-foreground: var(--foreground, #09090b);
+  --color-card: var(--card, #ffffff);
+  --color-card-foreground: var(--card-foreground, #09090b);
+  --color-popover: var(--popover, #ffffff);
+  --color-popover-foreground: var(--popover-foreground, #09090b);
+  --color-primary: var(--primary, #18181b);
+  --color-primary-foreground: var(--primary-foreground, #fafafa);
+  --color-secondary: var(--secondary, #f4f4f5);
+  --color-secondary-foreground: var(--secondary-foreground, #18181b);
+  --color-muted: var(--muted, #f4f4f5);
+  --color-muted-foreground: var(--muted-foreground, #71717a);
+  --color-accent: var(--accent, #f4f4f5);
+  --color-accent-foreground: var(--accent-foreground, #18181b);
+  --color-destructive: var(--destructive, #ef4444);
+  --color-destructive-foreground: var(--destructive-foreground, #fafafa);
+  --color-border: var(--border, #e4e4e7);
+  --color-input: var(--input, #e4e4e7);
+  --color-ring: var(--ring, #18181b);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #18181b;
+  --radius: 0.625rem;
+}

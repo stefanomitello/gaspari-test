@@ -9,6 +9,7 @@ I paragrafi che seguono spiegano come installare, avviare e consegnare il proget
 ## Prerequisiti
 
 L'installazione di questo progetto richiede i seguenti prerequisiti:
+
 - Docker
 - Docker Compose
 - NodeJS
@@ -167,12 +168,14 @@ Utente demo: `mario.rossi@gmail.com` / `MarioRossi2026`. Durante l'installazione
 ### Come valutiamo
 
 In ordine di peso:
+
 1. Gestione sessione/auth in SSR
 2. Architettura e qualità del codice
 3. Componenti (personalizzazione shadcn, uso corretto di bootstrap-italia)
 4. Accessibilità e SEO
 
 Bonus facoltativi (non richiesti):
+
 - Test su auth flow o componenti (Vitest/Playwright)
 - i18n IT/EN
 - Ottimizzazioni performance
@@ -205,3 +208,13 @@ Inviare il progetto in **uno** dei seguenti modi:
 L'indirizzo email a cui inviare il file ZIP o il link è `developers@gruppogaspari.it`
 
 Se possibile, aggiornare questo file README con eventuali note, scelte implementative, pensieri o problemi riscontrati.
+
+## Note:
+
+- per la parte admin ho preferito creare un layer separato invece di mixare tutti i componenti nella root in modo da avere un scaffolding ordinato in primis e soprattutto separare bootstrap e tailwind che, usando delle classes utility simili possono andare in conflitto. Usando i prefix e togliendo preflight cerco di mitigare il problema.
+
+### Bugs riscontrati:
+
+- l'importazione di tipi esterni ai SFC provoca un errore nel vue-compiler perché non ha accesso al fs su ambienti non-node. su componenti base di bootstrap-italia volevo creare inizialmente per ogni SFC un file \*.props.ts correlato, a causa di ciò ho optato per mettere i tipi dentro gli SFC per questione di velicità. Al momento di utilizzare shadcn che importa tipi da rekaUI, ho indagato piu a fondo è ho notato una issue su github gia segnalata: https://github.com/unovue/shadcn-vue/issues/1905 ho provato a installare Typescript v5 al posto di v7 (🥀 compiler in Go) ha risolto il problema.
+
+-
